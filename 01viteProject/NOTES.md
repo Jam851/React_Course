@@ -1,5 +1,7 @@
 React -> JScript -> HTML 
 
+
+## Definitions
 JSX ? 
 
 Component - In react we wrap html inside a JScript function. These files are Components & they 'return' HTML Code.
@@ -12,6 +14,7 @@ SPA - Single Page Element
       The page was always accessible.
 
 ReactDOM - Virtual DOM created & handled by React.
+
 
 ## Standard Rules ->
 1) The filenames of components should be .jsx instead of .js
