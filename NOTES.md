@@ -54,4 +54,6 @@ react.createElement - alternative for creating elements in HTML.
 useState() - returns the [1]Current Value & [2]A function to change stored value in an array. 1st index element is the function & 0th is Current Value.
              Value of variable placed inside the brackets of useState '()' are kept track of.
              can be accessed by destructing, for eg:-
+             
+             import { useState } from 'react'                  [Needs to be imported]
              const [counter, setCounter] = useState(*variable*)
