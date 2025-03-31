@@ -87,5 +87,41 @@ useState() - returns the [1]Current Value & [2]A function to change stored value
              const [counter, setCounter] = useState(*variable*)
 
 
+
+             Due to React Fibre Algo the updates using 'useState' Hook are made in batches.
+             Of one EventHandler, one Batch of updates is made on the UI due to Optimisation & Performance Reasons.
+             It is imp to understand how to manipulate these batch changes to get the result you want. For eg:
+             To update the variable count from 0 to 4.
+            
+         [1] (The following code updates the count only once on UI due to Stale Closure & Batch Updates.
+              Stale Closure: When you use setCount(count + 1), React receives the current value of count from the closure at the moment the addValue function is executed. Since the count value is not updated after each line, it remains the same.
+              Batched Updates: React batches these updates. So, if you call setCount(count + 1) multiple times, React schedules all of them to happen together at the end of the function.)
+
+            function App() {
+               const [count, setCount] = useState(0)
+
+               function addValue(){
+                  setCount(count + 1)
+                  setCount(count + 1)
+                  setCount(count + 1)
+                  setCount(count + 1)
+               }
+            }
+
+         [2] (The following code updates the count after each line. This syntax tells React to update the state of count after each line.)
+
+            function App() {
+               const [count, setCount] = useState(0)
+
+               function addValue(){
+                  setCount((prevCount) => prevCount + 1);
+                  setCount((prevCount) => prevCount + 1);
+                  setCount((prevCount) => prevCount + 1);
+                  setCount((prevCount) => prevCount + 1);
+               }
+            }
+
+
+
 Passing Objects through JSX - const myObj = { username: "Armaan" }
                               <App myUser = {myObj}/>
