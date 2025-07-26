@@ -78,6 +78,10 @@ react.createElement - alternative for creating elements in HTML.
                           'Hello'
                       )
 
+Passing Objects through JSX - const myObj = { username: "Armaan" }
+                              <App myUser = {myObj}/>                      
+
+
 useState() - returns the [1]Current Value & [2]A function to change stored value in an array. 1st index element is the function & 0th is Current Value.
              Value of variable placed inside the brackets of useState '()' are kept track of.
              [2] to change value of [1] everywhere. [2] is used to change UI in realtime.
@@ -121,7 +125,8 @@ useState() - returns the [1]Current Value & [2]A function to change stored value
                }
             }
 
+useEffect
 
+useCallback
 
-Passing Objects through JSX - const myObj = { username: "Armaan" }
-                              <App myUser = {myObj}/>
+useRef
